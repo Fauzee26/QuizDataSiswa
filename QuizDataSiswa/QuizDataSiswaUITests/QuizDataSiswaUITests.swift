@@ -1,14 +1,14 @@
 //
-//  StudentDataSytemUITests.swift
-//  StudentDataSytemUITests
+//  QuizDataSiswaUITests.swift
+//  QuizDataSiswaUITests
 //
-//  Created by Muhammad Hilmy Fauzi on 26/10/17.
-//  Copyright © 2017 Hilmy Corp. All rights reserved.
+//  Created by DOTS2 on 10/26/17.
+//  Copyright © 2017 Arjuna. All rights reserved.
 //
 
 import XCTest
 
-class StudentDataSytemUITests: XCTestCase {
+class QuizDataSiswaUITests: XCTestCase {
         
     override func setUp() {
         super.setUp()

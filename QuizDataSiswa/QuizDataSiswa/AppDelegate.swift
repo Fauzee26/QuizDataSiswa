@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  StudentDataSytem
+//  QuizDataSiswa
 //
-//  Created by Muhammad Hilmy Fauzi on 26/10/17.
-//  Copyright © 2017 Hilmy Corp. All rights reserved.
+//  Created by DOTS2 on 10/26/17.
+//  Copyright © 2017 Arjuna. All rights reserved.
 //
 
 import UIKit
@@ -53,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          application to it. This property is optional since there are legitimate
          error conditions that could cause the creation of the store to fail.
         */
-        let container = NSPersistentContainer(name: "StudentDataSytem")
+        let container = NSPersistentContainer(name: "QuizDataSiswa")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.

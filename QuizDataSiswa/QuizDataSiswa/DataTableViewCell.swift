@@ -8,11 +8,13 @@
 
 import UIKit
 
-class ListTableViewCell: UITableViewCell {
+class DataTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var labelName: UILabel!
-    @IBOutlet weak var labelEmail: UILabel!
-    @IBOutlet weak var labelSchool: UILabel!
+    @IBOutlet weak var labelgmail: UILabel!
+    @IBOutlet weak var labelemail: UILabel!
+    @IBOutlet weak var labeluser: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -1,39 +1,48 @@
 //
-//  InputProfileViewController.swift
-//  StudentDataSytem
+//  DetailViewController.swift
+//  QuizDataSiswa
 //
-//  Created by Muhammad Hilmy Fauzi on 26/10/17.
-//  Copyright © 2017 Hilmy Corp. All rights reserved.
+//  Created by DOTS2 on 10/26/17.
+//  Copyright © 2017 Arjuna. All rights reserved.
 //
 
 import UIKit
 
-class InputProfileViewController: UIViewController {
-
+class DetailViewController: UIViewController {
+    
     @IBOutlet weak var etUsername: UITextField!
     @IBOutlet weak var etEmail: UITextField!
     @IBOutlet weak var etPassword: UITextField!
     @IBOutlet weak var etSchool: UITextField!
     @IBOutlet weak var etClass: UITextField!
     @IBOutlet weak var etAge: UITextField!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
-
-   
-    @IBAction func btnSave(_ sender: Any) {
+    
+    
+    @IBAction func btnSaveTask(_ sender: Any) {
+        //deklarasi context
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        let nameTask = DataSiswa(context: context)
         
-        nameTask.ds_username = etUsername.text
-        nameTask.ds_school = etSchool.text
-        nameTask.ds_password = etPassword.text
-        nameTask.ds_email = etEmail.text
-        nameTask.ds_class = etClass.text
-        nameTask.ds_age = etAge.text
+        //deklarasi task
+        let nameSiswa = DataSiswa(context: context) //deklarasi nameTask sebagai konteks dari entiti Task
         
+        nameSiswa.ds_username = etUsername.text //deklarasikan bahwa nameTask.name_task itu isinya dari etNametask.text
+        
+        nameSiswa.ds_email = etEmail.text
+        nameSiswa.ds_password = etPassword.text
+        nameSiswa.ds_school = etSchool.text
+        nameSiswa.ds_age = etAge.text
+        nameSiswa.ds_class = etClass.text
+        
+        
+        
+        //proses penyimpanan data core
+        //mengecek apakah nilai dari etTask adalah kosong atau tidak
         if etUsername.text == "" {
             //kondisi ketika kosong
             //tampil alert dialog
@@ -87,8 +96,22 @@ class InputProfileViewController: UIViewController {
             print("Data berhasil disimpan")
         }
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
+
