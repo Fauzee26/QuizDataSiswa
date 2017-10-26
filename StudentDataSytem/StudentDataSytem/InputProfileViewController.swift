@@ -50,20 +50,57 @@ class InputProfileViewController: UIViewController {
         nameTask.ds_class = etClass.text
         nameTask.ds_age = etAge.text
         
-        if etUsername.text! == "" && etSchool.text! == "" && etPassword.text! == "" {
-            //condition if nil
-            //display alert dialog
-            let alertController = UIAlertController(title: "Warning",
-                                                    message: "Phone Profile Can't Be Empty", preferredStyle : .alert)
-            alertController.addAction(UIAlertAction(title: "OK",
-                                                    style: .default,handler: nil))
-            present(alertController, animated: true, completion: nil)
+        if etUsername.text == "" {
+            //kondisi ketika kosong
+            //tampil alert dialog
+            let alert = UIAlertController(title: "Warning", message: "Task Cannot Be Empty", preferredStyle: UIAlertControllerStyle.alert)
+            //menambahkan aksi ke button
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }else if etEmail.text == "" {
+            //kondisi ketika kosong
+            //tampil alert dialog
+            let alert = UIAlertController(title: "Warning", message: "Task Cannot Be Empty", preferredStyle: UIAlertControllerStyle.alert)
+            //menambahkan aksi ke button
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }else if etPassword.text == "" {
+            //kondisi ketika kosong
+            //tampil alert dialog
+            let alert = UIAlertController(title: "Warning", message: "Task Cannot Be Empty", preferredStyle: UIAlertControllerStyle.alert)
+            //menambahkan aksi ke button
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }else if etClass.text == "" {
+            //kondisi ketika kosong
+            //tampil alert dialog
+            let alert = UIAlertController(title: "Warning", message: "Task Cannot Be Empty", preferredStyle: UIAlertControllerStyle.alert)
+            //menambahkan aksi ke button
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }else if etSchool.text == "" {
+            //kondisi ketika kosong
+            //tampil alert dialog
+            let alert = UIAlertController(title: "Warning", message: "Task Cannot Be Empty", preferredStyle: UIAlertControllerStyle.alert)
+            //menambahkan aksi ke button
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }else if etAge.text == "" {
+            //kondisi ketika kosong
+            //tampil alert dialog
+            let alert = UIAlertController(title: "Warning", message: "Task Cannot Be Empty", preferredStyle: UIAlertControllerStyle.alert)
+            //menambahkan aksi ke button
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         }else{
+            //ketika kondisi tesk task nya tidak kosong
+            //data di simpan ke core Data
             (UIApplication.shared.delegate as! AppDelegate).saveContext()
+            
             _ = navigationController?.popViewController(animated: true)
             
-            //print if the data has been added
-            print("Data has been added")
+            //mencetak kalau data berhasil ditambahkan
+            print("Data berhasil disimpan")
         }
     }
     override func didReceiveMemoryWarning() {

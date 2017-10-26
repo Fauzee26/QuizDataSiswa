@@ -16,21 +16,22 @@ class DataProfileViewController: UIViewController {
     @IBOutlet weak var lblClass: UILabel!
     @IBOutlet weak var lblAge: UILabel!
     
-    var username = ""
-    var password = ""
-    var email = ""
-    var school = ""
-    var classs = ""
-    var age = ""
+    var passNama:String?
+    var passEmail:String?
+    var passPassword:String?
+    var passSchool:String?
+    var passClass:String?
+    var passAge:String?
     override func viewDidLoad() {
+        lblUsername.text = "Your Username: " + passNama!
+        lblEmail.text = "Your Email: " + passEmail!
+        lblPassword.text = "Your Password: " + passPassword!
+        lblSchool.text = "Your School: " + passSchool!
+        lblClass.text = "Your Class: " + passClass!
+        lblAge.text = "Your Age: " + passAge!
         super.viewDidLoad()
         
-        lblUsername.text = "Your Username: " + username
-        lblEmail.text = "Your Email: " + email
-        lblPassword.text = "Your Password: " + password
-        lblSchool.text = "Your School: " + school
-        lblClass.text = "Your Class: " + classs
-        lblAge.text = "Your Age: " + age
+        
 
         // Do any additional setup after loading the view.
     }

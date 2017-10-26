@@ -40,8 +40,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="127.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tiq-B3-ucW">
-                                            <rect key="frame" x="8" y="8" width="59" height="27"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tiq-B3-ucW">
+                                            <rect key="frame" x="8" y="8" width="359" height="27"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="27" id="tCU-yN-HL9"/>
                                             </constraints>
@@ -49,8 +49,8 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gbo-La-L4E">
-                                            <rect key="frame" x="8" y="40" width="49.5" height="26"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gbo-La-L4E">
+                                            <rect key="frame" x="8" y="40" width="359" height="26"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="26" id="cLp-7C-3tp"/>
                                             </constraints>
@@ -58,8 +58,8 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="School" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xrg-Cs-Isv">
-                                            <rect key="frame" x="8" y="75" width="78.5" height="27"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="School" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xrg-Cs-Isv">
+                                            <rect key="frame" x="8" y="75" width="359" height="27"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="27" id="8ln-4u-tq2"/>
                                             </constraints>
@@ -87,7 +87,7 @@
                                     <outlet property="labelEmail" destination="gbo-La-L4E" id="lq3-Kt-9jT"/>
                                     <outlet property="labelName" destination="tiq-B3-ucW" id="V7p-ZI-pzN"/>
                                     <outlet property="labelSchool" destination="xrg-Cs-Isv" id="e9E-Co-Aj5"/>
-                                    <segue destination="a12-Y6-2es" kind="modal" identifier="segue" id="kfH-Pg-p7T"/>
+                                    <segue destination="a12-Y6-2es" kind="modal" identifier="passData" id="kfH-Pg-p7T"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -99,14 +99,14 @@
                     <navigationItem key="navigationItem" id="JsP-S7-UQv">
                         <barButtonItem key="rightBarButtonItem" title="Add" id="1wT-r4-ksR">
                             <connections>
-                                <segue destination="hPa-tq-KRw" kind="modal" id="LDg-lV-yRN"/>
+                                <segue destination="hPa-tq-KRw" kind="modal" identifier="passData" id="LDg-lV-yRN"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lQr-uk-UXa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="703" y="143"/>
+            <point key="canvasLocation" x="493.60000000000002" y="124.58770614692655"/>
         </scene>
         <!--Input Profile View Controller-->
         <scene sceneID="6Gv-Cq-8sw">
@@ -177,7 +177,7 @@
                                 <state key="normal" title="Submit"/>
                                 <connections>
                                     <action selector="btnSave:" destination="hPa-tq-KRw" eventType="touchUpInside" id="bgx-31-EJo"/>
-                                    <segue destination="gGa-Vj-9jf" kind="modal" identifier="passData" id="GPr-rK-zAn"/>
+                                    <segue destination="gGa-Vj-9jf" kind="modal" id="iWU-GL-FcS"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -300,7 +300,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h7e-J5-FMb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="95" y="130"/>
+            <point key="canvasLocation" x="-198" y="125"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
