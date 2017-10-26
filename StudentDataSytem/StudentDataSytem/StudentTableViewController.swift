@@ -22,10 +22,7 @@ class StudentTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableView.estimatedRowHeight = 650.0
-        tableView.rowHeight = UITableViewAutomaticDimension
-        
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -64,6 +61,43 @@ class StudentTableViewController: UITableViewController {
         
         return cell
     }
+    override func viewWillAppear(_ animated: Bool) {
+        //call method getData()
+        getData()
+        //call reloadData
+        tableView.reloadData()
+    }
+    //method getData
+    func getData() {
+        //check what there is error or not
+        do {
+            //condition if nothing error
+            //so will request download data
+            tasks = try context.fetch(DataSiswa.fetchRequest())
+        }catch{
+            //condition if error fatch data
+            print("Fetching Failed")
+        }
+    }
+    //add data to delete data
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            //check swipe menu if the editing style is delete
+            let task = tasks[indexPath.row]
+            context.delete(task)
+            //delete data
+            (UIApplication.shared.delegate as! AppDelegate).saveContext()
+            
+            do {
+                //retrieve data
+                tasks = try context.fetch(DataSiswa.fetchRequest())
+            } catch {
+                print("Fetching Failed")
+            }
+        }
+        //load data again
+        tableView.reloadData()
+    }
    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         //mengecek data yang dikirim
@@ -95,51 +129,7 @@ class StudentTableViewController: UITableViewController {
             kirimData.passSchool = schoolSelected
             kirimData.passClass = classSelected
             kirimData.passAge = ageSelected
-            
-            
-            
-            
         }
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        //call method getData()
-        getData()
-        //call reloadData
-        tableView.reloadData()
-    }
-    
-    //method getData
-    func getData() {
-        //check what there is error or not
-        do {
-            //condition if nothing error
-            //so will request download data
-            tasks = try context.fetch(DataSiswa.fetchRequest())
-        }catch{
-            //condition if error fatch data
-            print("Fetching Failed")
-        }
-    }
-    
-    //add data to delete data
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            //check swipe menu if the editing style is delete
-            let task = tasks[indexPath.row]
-            context.delete(task)
-            //delete data
-            (UIApplication.shared.delegate as! AppDelegate).saveContext()
-            
-            do {
-                //retrieve data
-                tasks = try context.fetch(DataSiswa.fetchRequest())
-            } catch {
-                print("Fetching Failed")
-            }
-        }
-        //load data again
-        tableView.reloadData()
     }
 }
 

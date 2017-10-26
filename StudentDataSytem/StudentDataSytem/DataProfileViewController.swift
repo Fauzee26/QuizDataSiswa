@@ -23,13 +23,14 @@ class DataProfileViewController: UIViewController {
     var passClass:String?
     var passAge:String?
     override func viewDidLoad() {
+        super.viewDidLoad()
         lblUsername.text = "Your Username: " + passNama!
         lblEmail.text = "Your Email: " + passEmail!
         lblPassword.text = "Your Password: " + passPassword!
         lblSchool.text = "Your School: " + passSchool!
         lblClass.text = "Your Class: " + passClass!
         lblAge.text = "Your Age: " + passAge!
-        super.viewDidLoad()
+        
         
         
 

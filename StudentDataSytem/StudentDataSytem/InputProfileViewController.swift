@@ -22,23 +22,7 @@ class InputProfileViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //check what segue with name passData is available or not
-        if(segue.identifier == "passData"){
-            //declare sendData as destination segue with name view controller : GetDataViewController
-            let sendData = segue.destination as! DataProfileViewController
-            
-            //put the data that we want to send
-            //send username data
-            sendData.username = etUsername.text!
-            sendData.email = etEmail.text!
-            sendData.password = etPassword.text!
-            sendData.school = etSchool.text!
-            sendData.classs = etClass.text!
-            sendData.age = etAge.text!
-            
-        }
-    }
+   
     @IBAction func btnSave(_ sender: Any) {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         let nameTask = DataSiswa(context: context)
